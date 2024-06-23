@@ -22,13 +22,7 @@ def buy_product():
         'product_id': product_id
     })
 
-    # 購入記録
-    purchase_response = requests.post('http://purchase-domain:5004/purchases', json={
-        'user_id': 1,  # デモ用の固定ユーザーID
-        'product_id': product_id
-    })
-
-    return jsonify({'payment': payment_response.json(), 'purchase': purchase_response.json()})
+    return jsonify({'payment': payment_response.json()})
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5001)
