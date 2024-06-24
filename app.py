@@ -13,7 +13,7 @@ def get_product(product_id):
 @app.route('/api/buy', methods=['POST'])
 def buy_product():
     data = request.get_json()
-    product_id = data['productId']
+    product_id = data['product_id']
 
     # 決済処理
     payment_response = requests.post('http://payment-domain:5003/payments', json={
